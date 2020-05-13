@@ -26,13 +26,11 @@ module.exports = {
     async create(req, res) {    
 
         // Verifica se já existe um produto com o mesmo nome  
-        /*
         const productWithSameTitle = await Product.findOne({ 'title': req.body.title });
         if(productWithSameTitle) {
             return res.status(400).json({ message: 'Já existe um produto com o mesmo título'});
         } 
-        */
-       
+        
         const product = await Product.create(req.body);
         return res.json(product);
     },
